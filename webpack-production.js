@@ -1,8 +1,9 @@
 // https://github.com/shelljs/shelljs
 require('shelljs/global')
-rm('-rf', './static/*');
-cp('-R',  './src/tpls', './static/tpls')
-cp('-R',  './src/images', './static/images')
+rm('-rf', './static/*')
+rm('-rf', './dist/*')
+cp('-R',  './src/tpls', './dist/tpls')
+cp('-R',  './src/images', './dist/images')
 
 var webpack = require('webpack')
 var webpackConfig
@@ -11,11 +12,12 @@ var SpritesmithPlugin = require('webpack-spritesmith')
 var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var config = require('./config/index.js')
 
 
 module.exports = {
 
-  // 插件
+  // // 插件
   plugins:[
 
     // 启用文件压缩混淆

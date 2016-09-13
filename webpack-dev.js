@@ -15,7 +15,7 @@ module.exports = {
     historyApiFallback: true,
 
     // 指定服务根目录
-    contentBase:'./static/',
+    contentBase:'./dist/',
 
     stats:{
       colors: true,
