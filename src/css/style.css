@@ -17,9 +17,6 @@
 
 .div2
 {
-	background:url(../images/about.png);
-	background-size:63px 100px;
-	background-repeat:no-repeat;
 	transition: width 2s;
   width: 100px;
   height: 100px;

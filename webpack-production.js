@@ -1,12 +1,12 @@
 // https://github.com/shelljs/shelljs
 require('shelljs/global')
-rm('-rf', './static/*')
-rm('-rf', './dist/*')
-cp('-R',  './src/tpls', './dist/tpls')
-cp('-R',  './src/images', './dist/images')
+// rm('-rf', './static/*')
+rm('-rf', './dist')
+mkdir('./dist')
+cp('-R',  './src/entry', './dist/entry')
+cp('-R',  './src/img', './dist/img')
 
 var webpack = require('webpack')
-var webpackConfig
 var merge = require('webpack-merge')
 var SpritesmithPlugin = require('webpack-spritesmith')
 var path = require('path')
