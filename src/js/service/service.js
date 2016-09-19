@@ -1,6 +1,5 @@
 var app = require('../app')
 
-
 app.factory('Address', ['$location',function($location){
   return {
     API_ADDRESS: $location.protocol() +'://'+ $location.host()+':'+$location.port() +'/webapi/v1',

@@ -30,7 +30,8 @@ module.exports = merge({
         // 公共文件
         vendors: [
             './src/dep/angular.js',
-            './src/dep/angular-ui-router.js'
+            './src/dep/angular-ui-router.js',
+            './src/dep/angular-resource.js'
         ]
     },
 
@@ -62,6 +63,12 @@ module.exports = merge({
             loader: 'baggage?[file].html&[file].css'
         }],
         loaders: [
+            {
+              test: /\.js$/,
+              loader:'babel-loader',
+              query:['es2015'],
+              exclude:/[node_modules, dist]/
+            },
             // 处理angularjs 模版片段
             {
                 test: /\.html$/,
@@ -73,11 +80,12 @@ module.exports = merge({
             // 这里使用自动添加CSS3 浏览器前缀
             , {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css!autoprefixer?{browsers:["last 6 version"]}')
+                loader: ExtractTextPlugin.extract('style-loader', 'css!autoprefixer?{browsers:["last 6 version"]}'),
             }
 
             // 处理html图片
             , {
+                // test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
                 test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
                 loader: "file-loader?name=img/[name].[ext]"
             }
