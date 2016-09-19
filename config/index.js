@@ -3,7 +3,7 @@ module.exports = {
 	// build 配置
 	build:{
 		assetsRoot: path.resolve(__dirname, '../dist'),
-		assetsSubDirectory: 'static',
+		// assetsSubDirectory: 'static',
 		assetsPublicPath:'/',
 		productionSourceMap: true,
 
@@ -14,7 +14,7 @@ module.exports = {
 	// dev 配置
 	dev:{
 		port: 8081,
-		assetsSubDirectory: 'static',
+		// assetsSubDirectory: 'static',
 		assetsPublicPath:'/',
 		proxyTable:{},
 
